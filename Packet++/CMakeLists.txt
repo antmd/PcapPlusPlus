@@ -15,3 +15,10 @@ target_link_libraries(packetpp
 
 include(header/CMakeLists.txt)
 include(src/CMakeLists.txt)
+
+install(TARGETS packetpp
+    ARCHIVE DESTINATION lib
+)
+install(FILES ${PacketPPHeader} 
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${CMAKE_PROJECT_NAME}
+)

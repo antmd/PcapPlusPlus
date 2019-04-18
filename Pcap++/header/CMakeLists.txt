@@ -1,4 +1,4 @@
-set(PcapPPHeader
+set(PcapPPHeaderNames
     Device.h
     DpdkDevice.h
     DpdkDeviceList.h
@@ -16,4 +16,8 @@ set(PcapPPHeader
     WinPcapLiveDevice.h
     )
 
-add_sources(pcappp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${PcapPPHeader})
+add_sources(pcappp 
+    FILES_VAR PcapPPHeader
+    BASEDIR ${CMAKE_CURRENT_LIST_DIR} 
+    PUBLIC ${PcapPPHeaderNames}
+    )

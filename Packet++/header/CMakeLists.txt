@@ -1,4 +1,4 @@
-set(PacketPPHeader
+set(PacketPPHeaderNames
     ArpLayer.h
     DhcpLayer.h
     DnsLayer.h
@@ -40,4 +40,7 @@ set(PacketPPHeader
     VxlanLayer.h
     )
 
-add_sources(packetpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${PacketPPHeader})
+add_sources(packetpp 
+    FILES_VAR PacketPPHeader 
+    BASEDIR ${CMAKE_CURRENT_LIST_DIR} 
+    PUBLIC ${PacketPPHeaderNames})

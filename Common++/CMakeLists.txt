@@ -11,3 +11,10 @@ endif()
 
 include(header/CMakeLists.txt)
 include(src/CMakeLists.txt)
+
+install(TARGETS commonpp
+    ARCHIVE DESTINATION lib
+)
+install(FILES ${CommonPPHeader} 
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${CMAKE_PROJECT_NAME}
+)

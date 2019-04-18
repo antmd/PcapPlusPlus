@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
-project(PacketCpp)
+project(PcapPlusPlus)
 
-function(mm_absolute_paths out_paths_var)
+include(CMakePrintHelpers)
+
+function(absolute_paths out_paths_var)
     cmake_parse_arguments(
         ap
         ""
@@ -33,7 +35,7 @@ function(add_sources _target)
     cmake_parse_arguments(
         "ts"
         ""
-        "BASE_DIR"
+        "BASE_DIR;FILES_VAR"
         "INTERFACE;PUBLIC;PRIVATE"
         ${ARGN})
 
@@ -42,16 +44,20 @@ function(add_sources _target)
     endif()
 
     if (ts_INTERFACE) 
-        mm_absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_INTERFACE})
+        absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_INTERFACE})
         target_sources(${_target} INTERFACE ${abs_paths})
     endif()
     if (ts_PUBLIC) 
-        mm_absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_PUBLIC})
+        absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_PUBLIC})
         target_sources(${_target} PUBLIC ${abs_paths})
     endif()
     if (ts_PRIVATE) 
-        mm_absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_PRIVATE})
+        absolute_paths(abs_paths BASE_DIR ${ts_BASE_DIR} PATHS ${ts_PRIVATE})
         target_sources(${_target} PRIVATE ${abs_paths})
+    endif()
+
+    if(ts_FILES_VAR)
+        set(${ts_FILES_VAR} ${abs_paths} PARENT_SCOPE)
     endif()
 
 endfunction()
@@ -72,3 +78,4 @@ target_include_directories(light_pcapng PUBLIC ${LightPcapNgDir}/include)
 add_subdirectory(Common++)
 add_subdirectory(Pcap++)
 add_subdirectory(Packet++)
+add_subdirectory(Examples)

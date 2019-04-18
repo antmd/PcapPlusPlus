@@ -1,0 +1,40 @@
+set(PacketPPSource
+    ArpLayer.cpp
+    DhcpLayer.cpp
+    DnsLayer.cpp
+    DnsResource.cpp
+    DnsResourceData.cpp
+    EthLayer.cpp
+    GreLayer.cpp
+    HttpLayer.cpp
+    IPReassembly.cpp
+    IPv4Layer.cpp
+    IPv6Extensions.cpp
+    IPv6Layer.cpp
+    IcmpLayer.cpp
+    IgmpLayer.cpp
+    Layer.cpp
+    MplsLayer.cpp
+    NullLoopbackLayer.cpp
+    PPPoELayer.cpp
+    Packet.cpp
+    PacketTrailerLayer.cpp
+    PacketUtils.cpp
+    PayloadLayer.cpp
+    RadiusLayer.cpp
+    RawPacket.cpp
+    SSLHandshake.cpp
+    SSLLayer.cpp
+    SdpLayer.cpp
+    SipLayer.cpp
+    SllLayer.cpp
+    TLVData.cpp
+    TcpLayer.cpp
+    TcpReassembly.cpp
+    TextBasedProtocol.cpp
+    UdpLayer.cpp
+    VlanLayer.cpp
+    VxlanLayer.cpp
+    )
+
+add_sources(packetpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${PacketPPSource})

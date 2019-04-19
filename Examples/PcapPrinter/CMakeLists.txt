@@ -5,5 +5,7 @@ add_executable(pcap_printer EXCLUDE_FROM_ALL
 
 target_link_libraries(pcap_printer
     PRIVATE
-        pcappp
+        PcapPlusPlus::Pcap
     )
+
+add_dependencies(examples pcap_printer)

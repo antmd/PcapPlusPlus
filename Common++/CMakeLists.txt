@@ -1,5 +1,7 @@
 
-add_library(commonpp STATIC)
+add_library(commonpp)
+add_library(PcapPlusPlus::Common ALIAS commonpp)
+
 target_include_directories(commonpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header)
 target_compile_definitions(commonpp PUBLIC ${CommonDefines})
 

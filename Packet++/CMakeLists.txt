@@ -1,5 +1,6 @@
 
-add_library(packetpp STATIC)
+add_library(packetpp)
+add_library(PcapPlusPlus::Packet ALIAS packetpp)
 
 target_include_directories(packetpp 
     PUBLIC 
@@ -9,7 +10,7 @@ target_include_directories(packetpp
 
 target_link_libraries(packetpp 
     PUBLIC 
-        commonpp
+        PcapPlusPlus::Common
         light_pcapng_static
     )
 

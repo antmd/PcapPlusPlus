@@ -1,9 +1,11 @@
-add_executable(pcap_search
+add_executable(pcap_search EXCLUDE_FROM_ALL
     main.cpp
     )
 
 
 target_link_libraries(pcap_search
     PRIVATE
-        pcappp
+        PcapPlusPlus::Pcap
     )
+
+add_dependencies(examples pcap_search)

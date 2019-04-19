@@ -1,5 +1,6 @@
 
-add_library(pcappp STATIC)
+add_library(pcappp)
+add_library(PcapPlusPlus::Pcap ALIAS pcappp)
 
 target_include_directories(pcappp 
     PUBLIC 
@@ -11,9 +12,9 @@ find_package(Threads MODULE REQUIRED)
 
 target_link_libraries(pcappp 
     PUBLIC 
-        packetpp
-        -lpcap
+        PcapPlusPlus::Packet
         Threads::Threads
+        -lpcap
     )
 
 include(header/CMakeLists.txt)

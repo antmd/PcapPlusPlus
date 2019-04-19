@@ -75,6 +75,10 @@ add_subdirectory(${LightPcapNgDir})
 target_include_directories(light_pcapng_static PUBLIC ${LightPcapNgDir}/include)
 target_include_directories(light_pcapng PUBLIC ${LightPcapNgDir}/include)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE FILEPATH "Location for built libraries" FORCE)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE FILEPATH "Location for built libraries" FORCE)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin CACHE FILEPATH "Location for built executables" FORCE)
+
 add_subdirectory(Common++)
 add_subdirectory(Pcap++)
 add_subdirectory(Packet++)

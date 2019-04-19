@@ -1,3 +1,7 @@
+# QtCreator
+CMakeLists.txt.user
+
+# Out-of-tree cmake build
 build/
 
 #Compiled Object files

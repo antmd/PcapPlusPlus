@@ -15,4 +15,4 @@ set(PcapPPSource
     WinPcapLiveDevice.cpp
     )
 
-add_sources(pcappp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${PcapPPSource})
+add_sources(pcappp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PRIVATE ${PcapPPSource})

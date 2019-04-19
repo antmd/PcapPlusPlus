@@ -9,4 +9,4 @@ set(CommonPPSource
     TablePrinter.cpp
     )
 
-add_sources(commonpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${CommonPPSource})
+add_sources(commonpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PRIVATE ${CommonPPSource})

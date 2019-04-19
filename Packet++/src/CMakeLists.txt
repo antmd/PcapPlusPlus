@@ -37,4 +37,4 @@ set(PacketPPSource
     VxlanLayer.cpp
     )
 
-add_sources(packetpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PUBLIC ${PacketPPSource})
+add_sources(packetpp BASEDIR ${CMAKE_CURRENT_LIST_DIR} PRIVATE ${PacketPPSource})
